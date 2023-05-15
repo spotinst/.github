@@ -4,6 +4,10 @@
           "https://checkstyle.org/dtds/configuration_1_3.dtd">
 
 <module name="Checker">
+  <module name="SuppressionFilter">
+    <property name="file" value="/suppressions.xml"/>
+    <property name="optional" value="false"/>
+  </module>
   <module name="SuppressWarningsFilter"/>
 
   <property name="charset" value="UTF-8"/>
@@ -393,6 +397,12 @@
       <property name="checkFormat" value="$1"/>
       <!-- The check is suppressed in the next line of code after the comment -->
       <property name="influenceFormat" value="1"/>
+    </module>
+    <module name="MatchXpath">
+      <property name="id" value="LombokCheck"/>
+      <property name="query" value="//CLASS_DEF/MODIFIERS[not(./ANNOTATION/IDENT[@text='Data'])]"/>
+      <message key="matchxpath.match"
+               value="Each model class should have use '@Data' Lombok annotation."/>
     </module>
   </module>
 </module>
