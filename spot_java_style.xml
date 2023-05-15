@@ -5,7 +5,7 @@
 
 <module name="Checker">
   <module name="SuppressionFilter">
-    <property name="file" value="/suppressions.xml"/>
+    <property name="file" value="https://raw.githubusercontent.com/spotinst/.github/1f207fbbd267d70c569d9f05ccb59733e5a6a8c7/suppressions.xml"/>
     <property name="optional" value="false"/>
   </module>
   <module name="SuppressWarningsFilter"/>
