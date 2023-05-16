@@ -4,6 +4,10 @@
           "https://checkstyle.org/dtds/configuration_1_3.dtd">
 
 <module name="Checker">
+  <module name="SuppressionFilter">
+    <property name="file" value="https://raw.githubusercontent.com/spotinst/.github/main/supressions.xml"/>
+    <property name="optional" value="true"/>
+  </module>
   <module name="SuppressWarningsFilter"/>
 
   <property name="charset" value="UTF-8"/>
@@ -267,7 +271,7 @@
       <property name="arrayInitIndent" value="4"/>
     </module>
     <module name="AbbreviationAsWordInName">
-      <property name="ignoreFinal" value="false"/>
+      <property name="ignoreFinal" value="true"/>
       <property name="allowedAbbreviationLength" value="3"/>
       <property name="tokens"
                value="CLASS_DEF, INTERFACE_DEF, ENUM_DEF, ANNOTATION_DEF, ANNOTATION_FIELD_DEF,
@@ -393,6 +397,12 @@
       <property name="checkFormat" value="$1"/>
       <!-- The check is suppressed in the next line of code after the comment -->
       <property name="influenceFormat" value="1"/>
+    </module>
+    <module name="MatchXpath">
+      <property name="id" value="LombokCheck"/>
+      <property name="query" value="//CLASS_DEF/MODIFIERS[not(./ANNOTATION/IDENT[@text='Data'])]"/>
+      <message key="matchxpath.match"
+               value="Each model class should have use '@Data' Lombok annotation."/>
     </module>
   </module>
 </module>
