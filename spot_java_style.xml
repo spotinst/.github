@@ -5,8 +5,8 @@
 
 <module name="Checker">
   <module name="SuppressionFilter">
-    <property name="file" value="https://github.com/spotinst/.github/blob/main/suppressions.xml"/>
-    <property name="optional" value="false"/>
+    <property name="file" value="https://raw.githubusercontent.com/spotinst/.github/main/supressions.xml"/>
+    <property name="optional" value="true"/>
   </module>
   <module name="SuppressWarningsFilter"/>
 
