@@ -1,1 +1,1 @@
-### Welcome to ☁️ [Spot.io](https://spot.io) (by NetApp) Github!
+### Welcome to ☁️ [Flexera](https://spot.io) Github!
